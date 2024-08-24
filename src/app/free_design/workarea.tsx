@@ -42,10 +42,8 @@ export default function WorkArea() {
 
     return (
         <>
-            {/* Step 1: Sock Length & Style Selection */}
             {!showTextSection && (
                 <section className="w-full h-screen flex flex-col items-center justify-center font-[Montserrat] space-y-12 p-4">
-                    {/* Sock Length */}
                     <div className="p-3 space-y-3 w-full lg:w-3/4 xl:w-1/2">
                         <label className="text-2xl font-semibold">Sock Length</label>
                         <div className="w-full max-w-screen-lg mx-auto p-4">
@@ -63,7 +61,6 @@ export default function WorkArea() {
                         </div>
                     </div>
 
-                    {/* Sock Style */}
                     <div className="p-3 space-y-3 w-full lg:w-3/4 xl:w-1/2">
                         <label className="text-2xl font-semibold">Sock Style</label>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -94,7 +91,6 @@ export default function WorkArea() {
                 </section>
             )}
 
-            {/* Step 2: Design Details Form */}
             {showTextSection && (
                 <section className="w-full h-screen flex flex-col items-center justify-center font-[Montserrat] space-y-8 p-4">
                     <div className="p-3 space-y-16 w-full sm:w-2/3 lg:w-1/2 mx-auto">
