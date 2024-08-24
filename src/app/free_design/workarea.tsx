@@ -97,7 +97,7 @@ export default function WorkArea() {
                         <div className="text-center">
                             <h3 className="text-3xl font-extrabold">Design Details</h3>
                             <p className="text-sm font-semibold w-1/2 mx-auto">
-                                Please tell us about the custom designs you'd like to see! Include any logos or assets that our team can use.
+                                Please tell us about the custom designs you like to see! Include any logos or assets that our team can use.
                             </p>
                         </div>
                         <form className="font-[Montserrat] flex flex-col gap-y-5">
