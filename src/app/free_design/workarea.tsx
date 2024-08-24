@@ -49,18 +49,13 @@ export default function WorkArea() {
                     <div className="p-3 space-y-3 w-full lg:w-3/4 xl:w-1/2">
                         <label className="text-2xl font-semibold">Sock Length</label>
                         <div className="w-full max-w-screen-lg mx-auto p-4">
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                                 {['Ankle', 'Quarter Crew', 'Cotton Crew', 'Knee High'].map(length => (
                                     <div
                                         key={length}
-                                        className={`h-44 md:h-56 w-full max-w-xs border-4 ${selectedLengths.includes(length) ? 'border-blue-500' : 'border-gray-300'} rounded-lg cursor-pointer flex flex-col items-center justify-center p-2`}
+                                        className={`h-48 w-full border-4 ${selectedLengths.includes(length) ? 'border-blue-500' : 'border-gray-300'} rounded-lg cursor-pointer flex flex-col items-center justify-center p-2`}
                                         onClick={() => handleLengthSelect(length)}
                                     >
-                                        <img 
-                                            src={`https://custom.sockclub.com/_next/static/media/${length.toLowerCase().replace(/ /g, '_')}_blank_model.png`} 
-                                            className='h-full w-full object-cover' 
-                                            alt={length} 
-                                        />
                                         <p className='text-center font-medium mt-2 text-sm md:text-base'>{length}</p>
                                     </div>
                                 ))}
@@ -71,7 +66,7 @@ export default function WorkArea() {
                     {/* Sock Style */}
                     <div className="p-3 space-y-3 w-full lg:w-3/4 xl:w-1/2">
                         <label className="text-2xl font-semibold">Sock Style</label>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                             <div
                                 className={`border-4 ${selectedStyle === 'Classic' ? 'border-blue-500' : 'border-gray-300'} flex justify-between items-center h-16 rounded-lg p-5 cursor-pointer`}
                                 onClick={() => handleStyleSelect('Classic')}
