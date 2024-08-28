@@ -39,7 +39,7 @@ export default function page() {
                     {/* Left Column - Heading */}
                     <div className="flex flex-col justify-center p-8 gap-y-8">
                         <h1 className="text-6xl tracking-tight font-semibold text-blue-950 font-[Montserrat] leading-tight">
-                            We're Removing <br /> Language Barriers
+                            We re Removing <br /> Language Barriers
                         </h1>
                         <p className='text-base font-normal text-black w-2/3'>
                             Imagine a world where you can understand what people
