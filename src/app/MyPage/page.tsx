@@ -21,7 +21,7 @@ export default function page() {
                     </header>
 
                 </div>
-                <div className="h-6 w-full flex justify-center items-center">
+                <div className="h-14 w-full flex justify-center items-center gap-y-5">
                     <div className="grid grid-cols-4 gap-x-8 text-center text-gray-500 font-medium tracking-tighter">
                         <p>GI</p>
                         <p>Store</p>
@@ -31,42 +31,48 @@ export default function page() {
                 </div>
             </section>
 
-            <section
-                className="h-[500px] w-full bg-cover bg-center relative flex justify-center items-center font-[Montserrat]"
-                style={{ backgroundImage: "url('/path-to-your-background-image.jpg')" }}
-            >
-                <div className="grid grid-cols-1 md:grid-cols-2 w-4/5 justify-center mx-auto">
-                    <div className="flex flex-col justify-center p-8 gap-y-8">
-                        <h1 className="text-6xl tracking-tight font-semibold text-blue-950 font-[Montserrat] leading-tight">
-                            We re Removing <br /> Language Barriers
-                        </h1>
-                        <p className='text-base font-normal text-black w-2/3'>
-                            Imagine a world where you can understand what people
-                            are saying in any language
-                        </p>
-
-                        <div className='flex justify-normal items-center'>
-                            <div className='grid grid-cols-4 gap-x-1 items-center'>
-                                <button className='bg-blue-950 rounded-full px-10 py-4 text-white'>
+            <section className="h-[90vh] w-full bg-cover bg-right relative flex justify-center items-center font-[Montserrat] bg-yellow-50">
+                <div className="flex justify-around items-center w-full h-full relative">
+                    {/* Left Section */}
+                    <div className="flex flex-col justify-center items-end  gap-y-8 w-1/2 h-full">
+                        <div className='flex flex-col gap-y-5'>
+                            <h1 className="text-6xl tracking-tight font-bold text-[#333D62] leading-tight">
+                                We're Removing <br /> Language Barriers
+                            </h1>
+                            <p className="text-lg font-normal text-black w-3/4">
+                                Imagine a world where you can understand what people are saying in any language.
+                            </p>
+                            <div className="flex items-center gap-x-6">
+                                <button className="bg-[#333D62] rounded-full px-10 py-4 text-white">
                                     Pre Order
                                 </button>
-                                <span className='w-14 h-14 bg-blue-950 rounded-full flex justify-center items-center'>
-                                    <img src="/arrowIcon.png" width={22} height={22} alt="" />
+                                <span className="w-14 h-14 bg-[#333D62] rounded-full flex justify-center items-center -ml-6">
+                                    <img src="/arrowIcon.png" width={22} height={22} alt="Arrow Icon" />
                                 </span>
-                                <div className='flex gap-x-3 items-center -ml-20 text-xs'>
-                                <span className=' w-14 h-14 bg-slate-200 rounded-full flex justify-center items-center'>
-                                    <img src="/playIcon.png" width={22} height={22} alt="" />
-                                </span>
-                                Watch Video
+                                <div className="flex gap-x-3 items-center text-sm">
+                                    <span className="w-14 h-14 bg-white border border-gray-200 rounded-full flex justify-center items-center">
+                                        <img src="/playIcon.png" width={22} height={22} alt="Play Icon" />
+                                    </span>
+                                    Watch Video
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div className="flex justify-center items-center">
-                      
+
+                    {/* Right Section */}
+                    <div className="h-full w-1/2 relative overflow-visible">
+                        <img src="/vrHeroSection.png" alt="VR Box"  className='absolute top-[90px] right-[375px]'/>
+                        <img src="/arrowHeroSection.png" alt="HeroArrowImage" className='absolute bottom-72 left-44 z-20' />
+                        <img
+                            src="/HeroSectionImg.png"
+                            alt="HeroGlassImage"
+                            className="absolute -bottom-[124px] right-0 h-full w-full object-contain overflow-visible"
+                        />
                     </div>
+
                 </div>
             </section>
+
 
 
         </>
