@@ -1,7 +1,7 @@
 "use client"
 import React, { useState, useRef } from 'react';
 
-export default function page() {
+const PageComponent = () => {
 
     const sliderContainerRef = useRef<HTMLDivElement | null>(null);
     const sliderTrackRef = useRef<HTMLDivElement | null>(null);
@@ -11,7 +11,7 @@ export default function page() {
 
     // Constants
     const visibleItems = 3;
-    const totalItems = 8; // Make sure this matches the number of items in the track
+    const totalItems = 8;
 
     // Update the slide position
     const updateSlider = (index: number) => {
@@ -24,7 +24,6 @@ export default function page() {
             updateProgressBar(index);
         }
     };
-    
 
     // Update the progress bar
     const updateProgressBar = (index: number) => {
@@ -230,3 +229,4 @@ export default function page() {
         </>
     )
 }
+export default PageComponent;
