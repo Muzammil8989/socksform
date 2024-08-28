@@ -37,7 +37,7 @@ export default function page() {
                     <div className="flex flex-col justify-center items-end  gap-y-8 w-1/2 h-full">
                         <div className='flex flex-col gap-y-5'>
                             <h1 className="text-6xl tracking-tight font-bold text-[#333D62] leading-tight">
-                                We're Removing <br /> Language Barriers
+                                Were Removing <br /> Language Barriers
                             </h1>
                             <p className="text-lg font-normal text-black w-3/4">
                                 Imagine a world where you can understand what people are saying in any language.
