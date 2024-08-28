@@ -2,58 +2,6 @@
 import React, { useState, useRef } from 'react';
 
 const PageComponent = () => {
-
-    const sliderContainerRef = useRef<HTMLDivElement | null>(null);
-    const sliderTrackRef = useRef<HTMLDivElement | null>(null);
-
-    // State to track the current index
-    const [currentIndex, setCurrentIndex] = useState(0);
-
-    // Constants
-    const visibleItems = 3;
-    const totalItems = 8;
-
-    // Update the slide position
-    const updateSlider = (index: number) => {
-        const sliderContainer = sliderContainerRef.current;
-        const sliderTrack = sliderTrackRef.current;
-        if (sliderContainer && sliderTrack) {
-            const itemWidth = sliderContainer.clientWidth / visibleItems;
-            const offset = -index * itemWidth;
-            sliderTrack.style.transform = `translateX(${offset}px)`;
-            updateProgressBar(index);
-        }
-    };
-
-    // Update the progress bar
-    const updateProgressBar = (index: number) => {
-        const progressBar = document.querySelector('.progress-bar') as HTMLDivElement;
-        if (progressBar) {
-            const progressWidth = ((index + visibleItems) / totalItems) * 100;
-            progressBar.style.width = `${progressWidth}%`;
-        }
-    };
-
-    // Move to the next set of slides with looping
-    const handleNext = () => {
-        setCurrentIndex((prevIndex) => {
-            const newIndex = (prevIndex + visibleItems) % totalItems;
-            updateSlider(newIndex);
-            return newIndex;
-        });
-    };
-
-    // Move to the previous set of slides with looping
-    const handlePrev = () => {
-        setCurrentIndex((prevIndex) => {
-            const newIndex = (prevIndex - visibleItems + totalItems) % totalItems;
-            updateSlider(newIndex);
-            return newIndex;
-        });
-    };
-
-
-
     return (
         <>
             <section className='w-full h-full font-[Montserrat]'>
@@ -199,32 +147,103 @@ const PageComponent = () => {
                         </span>
                     </div>
                 </div>
-                <div ref={sliderContainerRef} className="relative overflow-hidden w-full mx-auto px-5">
-                    <div ref={sliderTrackRef} className="flex gap-x-4 transition-transform duration-500 ">
-                        <div className="flex-shrink-0 w-1/3 bg-black rounded-xl h-96"></div>
-                        <div className="flex-shrink-0 w-1/3 bg-black rounded-xl h-96"></div>
-                        <div className="flex-shrink-0 w-1/3 bg-black rounded-xl h-96"></div>
-                        <div className="flex-shrink-0 w-1/3 bg-black rounded-xl h-96"></div>
-                        <div className="flex-shrink-0 w-1/3 bg-black rounded-xl h-96"></div>
-                        <div className="flex-shrink-0 w-1/3 bg-black rounded-xl h-96"></div>
-                        <div className="flex-shrink-0 w-1/3 bg-black rounded-xl h-96"></div>
-                        <div className="flex-shrink-0 w-1/3 bg-black rounded-xl h-96"></div>
-                        <div className="flex-shrink-0 w-1/3 bg-black rounded-xl h-96"></div>
+                <div className='grid grid-cols-3 gap-5 h-96 w-full'>
+                    <div className='col-span-1  rounded-xl bg-no-repeat bg-center bg-cover p-5 flex justify-center items-end text-white font-bold text-xl'
+                        style={{ backgroundImage: "url('/product3.png')" }}
+                    >
+                        Device is attached on to temple
+                    </div>
+                    <div className='col-span-1  rounded-xl bg-no-repeat bg-center bg-cover p-5 flex justify-center items-end text-white font-bold text-xl'
+                        style={{ backgroundImage: "url('/product2.png')" }}
+                    >
+                        Device Is Connected Via Bluetooth
+                    </div>
+                    <div className='col-span-1  rounded-xl bg-no-repeat bg-center bg-cover p-5 flex justify-center items-end text-white font-bold text-xl'
+                        style={{ backgroundImage: "url('/product1.png')" }}
+                    >
+                        Translation Is Projected On Lens
                     </div>
                 </div>
-
-                {/* Progress Bar */}
-                <div className="progress-bar-container w-1/2 mt-2 mx-auto">
-                    <div className="progress-bar h-2 bg-black"></div>
-                </div>
-
-                {/* Navigation Buttons */}
-                <div className="flex justify-between mt-2">
-                    <button onClick={handlePrev} className="px-4 py-2 bg-gray-300">Prev</button>
-                    <button onClick={handleNext} className="px-4 py-2 bg-gray-300">Next</button>
+                <div className='bg-slate-200 h-2 w-1/3 rounded-full mx-auto'>
+                    <div className='bg-black w-1/2 h-2 rounded-full'></div>
                 </div>
             </section>
 
+            <section className='w-full h-full font-[Montserrat] space-y-12 bg-slate-50'>
+                <div className='w-full grid grid-cols-2 items-center justify-between py-14 px-56'>
+                    <p className='font-semibold text-5xl text-[#333D62]'>Whats Included </p>
+                    <p className='text-lg font-normal'>
+                        What's included in the Standard Package for your web
+                        design services?" I can provide a list of features and
+                        deliverables that are typically part.
+                    </p>
+                </div>
+                <div className='w-3/4 mx-auto grid grid-cols-3 gap-5'>
+                    <div className='col-span-1 w-full'>
+                        <div className='flex flex-col justify-between items-center gap-y-5'>
+                            <div className='p-8 rounded-lg w-full h-full space-y-3 bg-white'>
+                                <h1 className='text-2xl font-semibold text-[#333D62]'>
+                                    Charging case
+                                </h1>
+                                <p>
+                                    A charging case is a compact,
+                                    portable device designed to
+                                    recharge other electronic gadgets.
+                                </p>
+                                <img src="/AC.png" className=' mx-auto' alt="" />
+                            </div>
+                            <div className='p-8 rounded-lg w-full h-full space-y-3 bg-white'>
+                                <h1 className='text-2xl font-semibold text-[#333D62]'>
+                                    Companion app
+                                </h1>
+                                <p>
+                                    A companion app is a
+                                    mobile application designed
+                                    to complement.
+                                </p>
+                                <img src="/VRGRID.png" className='mx-auto' alt="" />
+                            </div>
+                        </div>
+                    </div>
+                    <div className='col-span-1 w-full rounded-lg space-y-5 relative bg-white'
+                    >
+                        <p className='font-semibold text-2xl text-[#333D62] pt-5 px-5'>GI glasses, with your choice of lens</p>
+                        <p className='px-5'>Glasses are more than just a corrective aid; they're a
+                            fashion statement. With the right choice of lens</p>
+                        <div className='overflow-hidden'
+                        // style={{ backgroundImage: "url('/glassmall.png')" }}
+                        >
+                            <img src="/glassmall.png" alt="" className='absolute bottom-0 left-0' />
+                        </div>
+                    </div>
+                    <div className='col-span-1 w-full'>
+                        <div className='flex flex-col justify-between items-center gap-y-5'>
+                            <div className='p-8 rounded-lg w-full h-full space-y-3 bg-white'>
+                                <h1 className='text-2xl font-semibold text-[#333D62]'>
+                                    Polishing Cloth
+                                </h1>
+                                <p>
+                                    A polishing cloth is a versatile tool
+                                    designed to gently clean and protect
+                                    various surfaces. Made from soft
+                                </p>
+                                <img src="/gridLaptop.png" className=' mx-auto' alt="" />
+                            </div>
+                            <div className='p-8 rounded-lg w-full h-full space-y-3 bg-white'>
+                                <h1 className='text-2xl font-semibold text-[#333D62]'>
+                                    USB-C cable
+                                </h1>
+                                <p>
+                                    USB-C has revolutionized the world
+                                    of connectivity, becoming the go-to
+                                    standard for charging and data.
+                                </p>
+                                <img src="/cableGrid.png" className=' mx-auto' alt="" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
         </>
     )
