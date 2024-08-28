@@ -36,7 +36,6 @@ export default function page() {
                 style={{ backgroundImage: "url('/path-to-your-background-image.jpg')" }}
             >
                 <div className="grid grid-cols-1 md:grid-cols-2 w-4/5 justify-center mx-auto">
-                    {/* Left Column - Heading */}
                     <div className="flex flex-col justify-center p-8 gap-y-8">
                         <h1 className="text-6xl tracking-tight font-semibold text-blue-950 font-[Montserrat] leading-tight">
                             We re Removing <br /> Language Barriers
@@ -63,8 +62,6 @@ export default function page() {
                             </div>
                         </div>
                     </div>
-
-                    {/* Right Column - Image */}
                     <div className="flex justify-center items-center">
                       
                     </div>
