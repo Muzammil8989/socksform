@@ -150,17 +150,17 @@ const PageComponent = () => {
                 </div>
                 <div className='grid grid-cols-3 gap-5 h-96 w-full'>
                     <div className='col-span-1  rounded-xl bg-no-repeat bg-center bg-cover p-5 flex justify-center items-end text-white font-bold text-xl h-full w-full'
-                        style={{ backgroundImage: "url('/product3.png')" }}
+                        style={{ backgroundImage: "url('/ProductImage2.png')" }}
                     >
                         Device is attached on to temple
                     </div>
                     <div className='col-span-1  rounded-xl bg-no-repeat bg-center bg-cover p-5 flex justify-center items-end text-white font-bold text-xl h-full w-full'
-                        style={{ backgroundImage: "url('/product2.png')" }}
+                        style={{ backgroundImage: "url('/ProductImage3.png')" }}
                     >
                         Device Is Connected Via Bluetooth
                     </div>
                     <div className='col-span-1  rounded-xl bg-no-repeat bg-center bg-cover p-5 flex justify-center items-end text-white font-bold text-xl h-full w-full'
-                        style={{ backgroundImage: "url('/product1.png')" }}
+                        style={{ backgroundImage: "url('/ProductImage.png')" }}
                     >
                         Translation Is Projected On Lens
                     </div>
