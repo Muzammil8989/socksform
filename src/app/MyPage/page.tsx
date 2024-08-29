@@ -304,6 +304,84 @@ const PageComponent = () => {
                     </div>
                 </div>
             </section>
+
+            <div className='h-16 w-full flex justify-around items-center px-28 bg-blue-700'>
+                <p className='text-white text-2xl'>G1</p>
+                <p className='text-white'>Frorn $599 / No subscription </p>
+                <div className='flex gap-x-6'>
+                    <button className="bg-white rounded-full px-10 py-1 text-black font-medium">
+                        Buy Now
+                    </button>
+                    <span className="p-2 bg-white rounded-full flex justify-center items-center -ml-6">
+                        <img src="/arrowIconBlack.png" width={22} height={22} alt="Arrow Icon" />
+                    </span>
+                </div>
+            </div>
+            <footer className='w-full h-[40vh] bg-[#070707] p-5 py-28 font-[Montserrat]'>
+                <div className='flex justify-center items-center' >
+                    <div className='w-4/5 flex justify-between items-center text-gray-300 font-light pb-5 border border-t-0 border-l-0 border-r-0 border-b-white text-sm'>
+                        <div className='flex flex-col gap-y-3 uppercase'>
+                            <p>Incorporation</p>
+                            <p>Accounting</p>
+                        </div>
+                        <div className='flex flex-col gap-y-3 uppercase'>
+                            <p>Features</p>
+                            <p>Company Secretary</p>
+                        </div>
+                        <div className='flex flex-col gap-y-3 uppercase'>
+                            <p>Other Services</p>
+                            <p>Resources</p>
+                        </div>
+                        <div className='flex flex-col gap-y-3 uppercase'>
+                            <p>Partners</p>
+                            <p>Company</p>
+                        </div>
+                    </div>
+                </div>
+                <div className='mx-auto  w-4/5 flex justify-between items-center py-6'>
+                    <div className='flex flex-col jus gap-y-4'>
+                        <div className='flex space-x-12'>
+                            <img src="/LogoWhite.png" alt="" />
+                            <div className='w-56 flex justify-between items-center border border-white rounded-xl gap-x-1 text-white px-5'>
+                                <div className='flex items-center gap-x-3'>
+                                    <img src="/globeIcon.png" className='w-5' alt="" />
+                                    <p>Singapore</p>
+                                </div>
+                                <img src="/footerDownIcon.png" className='w-4' alt="" />
+                            </div>
+                        </div>
+                        <p className='text-xs text-gray-300 mt-5'>Copyright 2023. All right reserved by abc</p>
+                    </div>
+                    <div className='flex flex-col jus gap-y-4 mt-5'>
+                        <div className='flex space-x-4'>
+                            <button className="flex items-center justify-around gap-x-2 bg-white rounded-full px-8 py-3 text-[#212833] font-medium">
+                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 30 30" color='#212833'>
+                                    <path d="M25.565,9.785c-0.123,0.077-3.051,1.702-3.051,5.305c0.138,4.109,3.695,5.55,3.756,5.55 c-0.061,0.077-0.537,1.963-1.947,3.94C23.204,26.283,21.962,28,20.076,28c-1.794,0-2.438-1.135-4.508-1.135 c-2.223,0-2.852,1.135-4.554,1.135c-1.886,0-3.22-1.809-4.4-3.496c-1.533-2.208-2.836-5.673-2.882-9 c-0.031-1.763,0.307-3.496,1.165-4.968c1.211-2.055,3.373-3.45,5.734-3.496c1.809-0.061,3.419,1.242,4.523,1.242 c1.058,0,3.036-1.242,5.274-1.242C21.394,7.041,23.97,7.332,25.565,9.785z M15.001,6.688c-0.322-1.61,0.567-3.22,1.395-4.247 c1.058-1.242,2.729-2.085,4.17-2.085c0.092,1.61-0.491,3.189-1.533,4.339C18.098,5.937,16.488,6.872,15.001,6.688z"></path>
+                                </svg>
+                                <span>
+                                    App Store
+                                </span>
+                            </button>
+                            <button className="flex items-center justify-around gap-x-2 bg-white rounded-full px-8 py-3 text-[#212833] font-medium">
+                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 50 50" color='#212833'>
+                                    <path d="M 7.125 2 L 28.78125 23.5 L 34.71875 17.5625 L 8.46875 2.40625 C 8.03125 2.152344 7.5625 2.011719 7.125 2 Z M 5.3125 3 C 5.117188 3.347656 5 3.757813 5 4.21875 L 5 46 C 5 46.335938 5.070313 46.636719 5.1875 46.90625 L 27.34375 24.90625 Z M 36.53125 18.59375 L 30.1875 24.90625 L 36.53125 31.1875 L 44.28125 26.75 C 45.382813 26.113281 45.539063 25.304688 45.53125 24.875 C 45.519531 24.164063 45.070313 23.5 44.3125 23.09375 C 43.652344 22.738281 38.75 19.882813 36.53125 18.59375 Z M 28.78125 26.3125 L 6.9375 47.96875 C 7.300781 47.949219 7.695313 47.871094 8.0625 47.65625 C 8.917969 47.160156 26.21875 37.15625 26.21875 37.15625 L 34.75 32.25 Z"></path>
+                                </svg>
+                                <span>
+                                    Google Play
+                                </span>
+                            </button>
+
+                        </div>
+                        <div className='flex justify-end items-center gap-x-10 mt-5'>
+                            <img src="/fbIcon.png" className='w-7' alt="" />
+                            <img src="/instaIcon.png" className='w-7' alt="" />
+                            <img src="/youtubeIcon.png" className='w-7' alt="" />
+                            <img src="/tiktokIcon.png" className='w-7' alt="" />
+                            <img src="/iconLinkedin.png" className='w-7' alt="" />
+                        </div>
+                    </div>
+                </div>
+            </footer>
         </>
     )
 }
