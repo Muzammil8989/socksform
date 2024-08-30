@@ -37,8 +37,8 @@ export default function LayoutMain() {
                         transition={{ type: 'spring', stiffness: 50, damping: 10 }}
                         onClick={() => window.open("https://socks.phpnode.net/sockcustomizer/", "_blank")}
                     >
-                     <p className='text-2xl font-semibold text-[#BE261F]'>Request Free Designs:</p>
-                     <p className='bg-gray-200 text-black w-1/2 py-1 text-center rounded-full font-bold text-sm'>Design your Own</p>
+                     <p className='text-2xl font-semibold text-[#BE261F] capitalize'>Design Your Own</p>
+                     <p className='bg-gray-200 text-black w-1/2 py-1 text-center rounded-full font-bold text-sm capitalize'>Get Design Instantly</p>
                      <p>
                      Upload your logo and choose from hundreds of templates and colors.
                      </p>
