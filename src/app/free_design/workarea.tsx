@@ -6,42 +6,56 @@ import Step1 from "../../assests/Images/Step 1 Crew.jpg";
 import Step2 from "../../assests/Images/Step 1 Knee Hihg.jpg";
 import Step3 from "../../assests/Images/t-Step1NoShow.jpg";
 import Step4 from "../../assests/Images/t-Step1Quarter.jpg";
-import KnightSocks from "../../assests/Images/Custom_Fuzzy_Socks-removebg-preview.png";
-import Sublimation from "../../assests/Images/sublimation printing socks.png";
-import Technology from "../../assests/Images/Technology_360_degree_printing_socks-removebg-preview.png";
+import KnightSocks from "../../assests/Images/Knigt Socks.png";
+import Sublimation from "../../assests/Images/Sublimation Socks.png";
+import Technology from "../../assests/Images/360 Degree Socks.png";
 import Knee_high from "../../assests/Images/Step 3 Athletic.jpg";
 import Cycling from "../../assests/Images/Step 3 cycling.jpg";
 import Dress from "../../assests/Images/Step 3 dress.jpg";
 import Other from "../../assests/Images/Step 3 other.jpg";
-import Full from "../../assests/Images/Step 4 Full.jpg";
-import Half from "../../assests/Images/Step 4 Half.jpg";
-import Regular from "../../assests/Images/Step 4 regular.jpg";
-import TStep1 from "../../assests/Images/t-Step1NoShow.jpg";
-import TStep2 from "../../assests/Images/t-Step1Quarter.jpg";
-import TStep3 from "../../assests/Images/t-Step5Bottom.jpg";
-import TStep4 from "../../assests/Images/t-Step5CUFF.jpg";
-import TStep5 from "../../assests/Images/t-Step5TOE.jpg";
-import TStep6 from "../../assests/Images/t-Step5back.jpg";
-import TStep7 from "../../assests/Images/t-Step5front.jpg";
+import Baby_socks from "../../assests/Images/Babys Socks.png";
+import Kid_socks from "../../assests/Images/Kid Socks.png";
+import Man_standard from "../../assests/Images/Man Socks.png";
+import Woman_standard from "../../assests/Images/Woman Standard.png";
+import Unisex from "../../assests/Images/Unisex Socks.png";
+import Full_standard from "../../assests/Images/Standard Thick.jpg";
+import Half from "../../assests/Images/Cushion.jpg";
+import Regular from "../../assests/Images/Full Therry.jpg";
+import OnBothSide from "../../assests/Images/onBothSide.jpg";
+import LogoFullOver from "../../assests/Images/LogoFullOver.jpg";
+import OnFront from "../../assests/Images/t-Step5front.jpg";
+import Onback from "../../assests/Images/Onback.jpg";
+import OnBottom from "../../assests/Images/OnBottom.jpg";
+import OnCuff from "../../assests/Images/OnCuff.jpg";
+import OnToe from "../../assests/Images/OnToe.jpg";
+import pair1baigh from "../../assests/Images/1 pair polybaig.png";
+import pair20bag from "../../assests/Images/20 pair polybag.png";
+import CustomHeadCrad from "../../assests/Images/Custom Head Card Packing.webp";
+import WaistCard from "../../assests/Images/Waist Packing.png";
+import CustomMixed from "../../assests/Images/Mixed_Box_Full_1024x1024-removebg-preview.png";
+import Embroidery from "../../assests/Images/Embroidery.png";
+import ExtraPrinting from "../../assests/Images/Printing logo.png";
+import Antslip from "../../assests/Images/t-antislip.jpg";
+import MultiSlip from "../../assests/Images/t-cuffsocks.jpg";
+import Labelled from "../../assests/Images/Label logo.png";
+import { motion } from "framer-motion";
 import { Modal, Button } from "antd";
-import axios from 'axios';
+import axios from "axios";
+import { icons } from "antd/es/image/PreviewGroup";
 
 export default function WorkArea() {
   const [currentStep, setCurrentStep] = useState(0);
-  const [selectedSockSize, setSelectedSockSize] = useState<string | null>(null);
+  const [selectedSockSize, setSelectedSockSize] = useState("");
   const [selectedLengths, setSelectedLengths] = useState<string[]>([]);
-  const [selectedStyle, setSelectedStyle] = useState<string | null>(null);
-  const [selectedTechnology, setSelectedTechnology] = useState<string | null>(
-    null
-  );
+
+  const [selectedStyle, setSelectedStyle] = useState("");
+  const [selectedTechnology, setSelectedTechnology] = useState("");
   const [showTextSection, setShowTextSection] = useState(false);
   const [selectedFiles, setSelectedFiles] = useState<File[]>([]);
   const [projectName, setProjectName] = useState("");
   const [designRequest, setDesignRequest] = useState("");
   const [selectedMaterial, setSelectedMaterial] = useState("");
-  const [selectedThickness, setSelectedThickness] = useState<string | null>(
-    null
-  );
+  const [selectedThickness, setSelectedThickness] = useState("");
   const [selectedPattern, setSelectedPattern] = useState("");
   const [selectedPacking, setSelectedPacking] = useState("");
   const [selectedSockUpgrade, setSelectedSockUpgrade] = useState("");
@@ -58,30 +72,30 @@ export default function WorkArea() {
     "Wool, Coolmax etc.",
     "Others (please contact us)",
   ];
-  const sockThicknes = [
+  const sockThickness = [
     {
       id: 1,
       name: "Standard",
-      icons: Full, // Make sure Full is imported and used correctly
+      icons: Full_standard, // Ensure Full_standard is imported correctly
     },
     {
       id: 2,
       name: "Cushion Pad Socks",
-      icons: Half, // Make sure Half is imported and used correctly
+      icons: Half, // Ensure Half is imported correctly
     },
     {
       id: 3,
       name: "Full Terry Thick",
-      icons: Regular, // Make sure Regular is imported and used correctly
+      icons: Regular, // Ensure Regular is imported correctly
     },
   ];
 
   const sockSize = [
-    { id: 1, name: "Infant & Baby Socks" },
-    { id: 2, name: "Kid Socks" },
-    { id: 3, name: "Woman's Standard Socks" },
-    { id: 4, name: "Man's Standard Socks" },
-    { id: 5, name: "Unisex's Socks" },
+    { id: 1, name: "Infant & Baby Socks", icons: Baby_socks },
+    { id: 2, name: "Kid Socks", icons: Kid_socks },
+    { id: 3, name: "Woman's Standard Socks", icons: Woman_standard },
+    { id: 4, name: "Man's Standard Socks", icons: Man_standard },
+    { id: 5, name: "Unisex's Socks", icons: Unisex },
   ];
 
   const sockLength = [
@@ -105,27 +119,27 @@ export default function WorkArea() {
   ];
 
   const sockPatterns = [
-    { id: 1, name: "On Both Sides", icons: TStep1 },
-    { id: 2, name: "Logo Full Over", icons: TStep2 },
-    { id: 3, name: "On Front", icons: TStep3 },
-    { id: 4, name: "On Back", icons: TStep4 },
-    { id: 5, name: "On Bottom", icons: TStep5 },
-    { id: 6, name: "On Cuff", icons: TStep6 },
-    { id: 7, name: "On Toe Line", icons: TStep7 },
+    { id: 1, name: "On Both Sides", icons: OnBothSide },
+    { id: 2, name: "Logo Full Over", icons: LogoFullOver },
+    { id: 3, name: "On Front", icons: OnFront },
+    { id: 4, name: "On Back", icons: Onback },
+    { id: 5, name: "On Bottom", icons: OnBottom },
+    { id: 6, name: "On Cuff", icons: OnCuff },
+    { id: 7, name: "On Toe Line", icons: OnToe },
   ];
   const customPacking = [
-    { id: 1, name: "On Both Sides", icons: TStep1 },
-    { id: 2, name: "Logo Full Over", icons: TStep2 },
-    { id: 3, name: "On Front", icons: TStep3 },
-    { id: 4, name: "On Back", icons: TStep4 },
-    { id: 5, name: "On Bottom", icons: TStep5 },
+    { id: 1, name: "1 Pair / Poly Bag", icons: pair1baigh },
+    { id: 2, name: "20 Pair / Poly Bag", icons: pair20bag },
+    { id: 3, name: "Custom Head Card Packing", icons: CustomHeadCrad },
+    { id: 4, name: "Custom Waist Card Packing", icons: WaistCard },
+    { id: 5, name: "Other Custom Packing, Please Contact For Details", icons:CustomMixed },
   ];
   const sockUpgrade = [
-    { id: 1, name: "On Both Sides", icons: TStep1 },
-    { id: 2, name: "Logo Full Over", icons: TStep2 },
-    { id: 3, name: "On Front", icons: TStep3 },
-    { id: 4, name: "On Back", icons: TStep4 },
-    { id: 5, name: "On Bottom", icons: TStep5 },
+    { id: 1, name: "Embroidery", icons: Embroidery },
+    { id: 2, name: "Extra Printing", icons: ExtraPrinting },
+    { id: 3, name: "Anti Slip1", icons: Antslip },
+    { id: 4, name: "Multi Cuffs", icons: MultiSlip },
+    { id: 5, name: "Labeled", icons: Labelled },
   ];
 
   const handleSockSizeSelect = (name: string) => {
@@ -135,7 +149,7 @@ export default function WorkArea() {
   const handleLengthSelect = (length: string) => {
     setSelectedLengths((prevSelectedLengths) =>
       prevSelectedLengths.includes(length)
-        ? prevSelectedLengths.filter((item) => item !== length)
+        ? prevSelectedLengths.filter((l) => l !== length)
         : [...prevSelectedLengths, length]
     );
   };
@@ -167,33 +181,37 @@ export default function WorkArea() {
   const saveDesignRequest = async () => {
     const formData = new FormData();
 
-    formData.append('projectName', projectName);
-    formData.append('designRequest', designRequest);
-    formData.append('selectedSockSize', selectedSockSize);
-    formData.append('selectedLengths', JSON.stringify(selectedLengths));
-    formData.append('selectedStyle', selectedStyle);
-    formData.append('selectedTechnology', selectedTechnology);
-    formData.append('selectedMaterial', selectedMaterial);
-    formData.append('selectedThickness', selectedThickness);
-    formData.append('selectedPattern', selectedPattern);
-    formData.append('selectedPacking', selectedPacking);
-    formData.append('selectedSockUpgrade', selectedSockUpgrade);
+    formData.append("projectName", projectName);
+    formData.append("designRequest", designRequest);
+    formData.append("selectedSockSize", selectedSockSize);
+    formData.append("selectedLengths", JSON.stringify(selectedLengths));
+    formData.append("selectedStyle", selectedStyle);
+    formData.append("selectedTechnology", selectedTechnology);
+    formData.append("selectedMaterial", selectedMaterial);
+    formData.append("selectedThickness", selectedThickness);
+    formData.append("selectedPattern", selectedPattern);
+    formData.append("selectedPacking", selectedPacking);
+    formData.append("selectedSockUpgrade", selectedSockUpgrade);
 
     // Append files to formData
     selectedFiles.forEach((file) => {
-      formData.append('selectedFiles', file);
+      formData.append("selectedFiles", file);
     });
 
     try {
-      const response = await axios.post('https://your-api-url.com/save', formData, {
-        headers: {
-          'Content-Type': 'multipart/form-data',
-        },
-      });
-      console.log('Response:', response.data);
+      const response = await axios.post(
+        "https://your-api-url.com/save",
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+      console.log("Response:", response.data);
       // Optionally handle success (e.g., show success message)
     } catch (error) {
-      console.error('Error saving design request:', error);
+      console.error("Error saving design request:", error);
       // Optionally handle error (e.g., show error message)
     }
   };
@@ -202,7 +220,7 @@ export default function WorkArea() {
     if (currentStep < 3) {
       setCurrentStep(currentStep + 1);
     } else {
-      saveDesignRequest(); 
+      saveDesignRequest();
       setShowModal(true);
     }
   };
@@ -266,7 +284,7 @@ export default function WorkArea() {
                           alt={name}
                           className="h-4/5 w-full absolute top-0"
                         />
-                        <p className="text-center font-medium text-xs lg:text-base absolute bottom-1">
+                        <p className="text-center font-semibold  text-xs lg:text-base absolute bottom-1">
                           {name}
                         </p>
                       </div>
@@ -322,7 +340,7 @@ export default function WorkArea() {
                         <Image
                           src={icons}
                           alt={name}
-                          className="h-2/3 mb-5 w-full absolute top-0"
+                          className="h-2/3 mb-5 w-1/2 absolute top-0"
                         />
                         <p className="text-center font-semibold text-[10px] lg:text-base absolute bottom-0">
                           {name}
@@ -349,10 +367,15 @@ export default function WorkArea() {
                           selectedSockSize === sock.name
                             ? "border-red-500"
                             : "border-gray-300"
-                        } rounded-lg cursor-pointer flex flex-col justify-center items-center h-20 sm:h-24 lg:h-28 p-4`}
+                        } rounded-lg cursor-pointer flex flex-col justify-center items-center h-20 sm:h-24 lg:h-44 p-4 relative`} // Added 'relative' class
                         onClick={() => handleSockSizeSelect(sock.name)}
                       >
-                        <p className="font-semibold text-sm sm:text-lg text-black text-center">
+                        <Image
+                          src={sock.icons} // Use sock.icons instead of icons
+                          alt={sock.name} // Use sock.name instead of name
+                          className="h-2/3 mb-5 w-1/2 absolute top-0"
+                        />
+                        <p className="text-center font-semibold text-[10px] lg:text-base absolute bottom-0">
                           {sock.name}
                         </p>
                       </div>
@@ -382,35 +405,42 @@ export default function WorkArea() {
                 </div>
 
                 {/* Sock Thickness Section */}
-                <div className="p-3 w-full ">
-                  <label className="text-2xl font-semibold">
-                    Sock Thickness
-                  </label>
-                  <div className="grid grid-cols-2 lg:grid-cols-3 gap-3">
-                    {sockThicknes.map(({ id, name, icons }) => (
-                      <div
-                        key={id}
-                        className={`h-28 sm:h-44 lg:h-52 w-full border-4 ${
-                          selectedThickness === name
-                            ? "border-red-500"
-                            : "border-gray-300"
-                        } flex flex-col justify-between items-center rounded-lg p-4 cursor-pointer`}
-                        onClick={() => handleThicknessSelect(name)}
-                      >
-                        <Image
-                          src={icons}
-                          alt={name}
-                          className="object-cover size-10 sm:w-20 sm:h-20 lg:w-24 lg:h-24 mb-2"
-                        />
-                        <p className="text-center font-medium mt-2 text-xs sm:text-sm lg:text-base">
-                          {name}
-                        </p>
+              
+                  <div className="flex flex-col items-center  w-full">
+                    {/* Sock Thickness Section */}
+                    <div className="p-4 w-full ">
+                      <label className="text-2xl font-semibold">
+                        Sock Thickness
+                      </label>
+                      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+                        {sockThickness.map((thickness) => (
+                          <div
+                            key={thickness.id}
+                            className={`border-4 ${
+                              selectedThickness === thickness.name
+                                ? "border-red-500"
+                                : "border-gray-300"
+                            } rounded-lg cursor-pointer flex flex-col justify-center items-center h-20 sm:h-24 lg:h-44 p-4 relative`} // Reused styles from sock sizes
+                            onClick={() =>
+                              handleThicknessSelect(thickness.name)
+                            }
+                          >
+                            <Image
+                              src={thickness.icons} // Use thickness.icons
+                              alt={thickness.name} // Use thickness.name
+                              className="h-2/3 mb-5 w-1/2 absolute top-0"
+                            />
+                            <p className="text-center font-semibold text-[10px] lg:text-base absolute bottom-0">
+                              {thickness.name}
+                            </p>
+                          </div>
+                        ))}
                       </div>
-                    ))}
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+           
           )}
 
           {currentStep === 2 && (
@@ -437,7 +467,7 @@ export default function WorkArea() {
                           alt={name}
                           className="h-2/3 mb-2 w-full object-contain"
                         />
-                        <p className="text-center font-medium mt-2 text-xs sm:text-sm lg:text-base">
+                        <p className="text-center font-semibold mt-2 text-xs sm:text-sm lg:text-base">
                           {name}
                         </p>
                       </div>
@@ -466,7 +496,7 @@ export default function WorkArea() {
                           alt={name}
                           className="h-2/3 mb-2 w-full object-contain"
                         />
-                        <p className="text-center font-medium mt-2 text-xs sm:text-sm lg:text-base">
+                        <p className="text-center font-semibold mt-2 text-xs sm:text-sm lg:text-base">
                           {name}
                         </p>
                       </div>
@@ -495,7 +525,7 @@ export default function WorkArea() {
                           alt={name}
                           className="h-2/3 mb-2 w-full object-contain"
                         />
-                        <p className="text-center font-medium mt-2 text-xs sm:text-sm lg:text-base">
+                        <p className="text-center font-semibold mt-2 text-xs sm:text-sm lg:text-base">
                           {name}
                         </p>
                       </div>
@@ -592,7 +622,6 @@ export default function WorkArea() {
       )}
 
       <Modal
-       
         visible={showModal}
         onOk={closeModal}
         onCancel={closeModal}
@@ -600,7 +629,9 @@ export default function WorkArea() {
         centered // Center the modal on the screen
         className="modal-custom" // Custom class for additional styling
       >
-        <h1 className="text-2xl font-semibold text-center text-red-500">Thank you for your submission!</h1>
+        <h1 className="text-2xl font-semibold text-center text-red-500">
+          Thank you for your submission!
+        </h1>
         <div className="text-center">
           <p className="text-xl mt-4">
             Your design submission has been received!
